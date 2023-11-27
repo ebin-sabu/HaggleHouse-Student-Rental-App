@@ -7,6 +7,7 @@ const ListingDetails = ({ residency }) => {
             <p>{residency.description}</p>
             <p><strong>Price: £{residency.price}</strong></p>
             <p>{residency.createdAt}</p>
+            <img id="myImg" alt="Cover" src={residency.image}></img>
         </div>
     )
 }

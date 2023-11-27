@@ -40,8 +40,16 @@ header a {
 /* homepage */
 .home {
   display: grid;
-  grid-template-columns: 3fr 1fr;
-  gap: 100px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  place-items: center;
+}
+
+.listings {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  /* Adjust as needed */
 }
 
 .listing-details {
@@ -51,6 +59,8 @@ header a {
   padding: 20px;
   position: relative;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
+  width: 200px;
+  height: 300px;
 }
 
 .listing-details h4 {
@@ -74,4 +84,17 @@ header a {
   padding: 6px;
   border-radius: 50%;
   color: #333;
+}
+
+.listing-details img {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  height: 50%;
+  object-fit: cover;
+  border-radius: 25px;
 }
