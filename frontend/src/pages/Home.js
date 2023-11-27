@@ -1,32 +1,27 @@
 import { useEffect, useState } from "react"
+import { getListings } from '../api/axios'
+import SearchBar from '../components/SearchBar'
+import ListPage from '../components/ListPage'
 
-// components
-import ListingDetails from "../components/ListingDetails"
 
 const Home = () => {
-  const [residencies, setResidencies] = useState(null)
+  const [listings, setListings] = useState([])
+  const [searchResults, setSearchResults] = useState([])
 
   useEffect(() => {
-    const fetchListings = async () => {
-      const response = await fetch('http://localhost:8000/api/residency/allresd')
-      const json = await response.json()
-
-      if (response.ok) {
-        setResidencies(json)
-      }
-    }
-
-    fetchListings()
+    getListings().then(json => {
+      setListings(json)
+      setSearchResults(json)
+    })
   }, [])
 
   return (
-    <div className="home">
-      <div className="listings">
-        {residencies && residencies.map((residency, index) => (
-          <ListingDetails key={residency._id || index} residency={residency} />
-        ))}
+    <>
+      <div className="home">
+        <SearchBar listings={listings} setSearchResults={setSearchResults} />
+        <ListPage searchResults={searchResults} />
       </div>
-    </div>
+    </>
   )
 }
 
