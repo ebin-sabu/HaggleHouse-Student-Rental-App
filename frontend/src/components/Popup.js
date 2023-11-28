@@ -2,13 +2,18 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Carousel from 'react-bootstrap/Carousel';
+import ButtonGroup from 'react-bootstrap/ButtonGroup';
 
 function Popup(popuplisting) {
     const [show, setShow] = useState(false);
 
     return (
         <>
-            <button className="view-button" onClick={() => setShow(true)}>View</button>
+            <div className="position-absolute top-100 start-50 translate-middle">
+                <div className="d-grid gap-2">
+                    <Button variant="dark" size="sm" onClick={() => setShow(true)}>View</Button>{' '}
+                </div>
+            </div>
 
             <Modal
                 show={show}
