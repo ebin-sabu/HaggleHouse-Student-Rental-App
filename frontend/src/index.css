@@ -24,7 +24,6 @@ header {
 }
 
 header .MainNavbar {
-  max-width: 1400px;
   margin: 0 auto;
   padding: 20px 20px;
   display: flex;
@@ -65,6 +64,12 @@ header h2 {
 .highlight {
   color: #F6AE2D;
 }
+
+.title {
+  color: white;
+}
+
+
 
 /* homepage */
 .home {
@@ -229,6 +234,14 @@ main {
     width: 350px;
     height: 420px;
     border-radius: 20px;
+  }
+
+  .listing-details h5 {
+    bottom: 200px;
+  }
+
+  .listing-details p {
+    text-align: center;
   }
 }
 
