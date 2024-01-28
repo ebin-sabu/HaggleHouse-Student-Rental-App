@@ -1,3 +1,6 @@
+import Form from 'react-bootstrap/Form';
+import InputGroup from 'react-bootstrap/InputGroup';
+
 
 const SearchBar = ({ listings, setSearchResults }) => {
     const handleSubmit = (e) => e.preventDefault()
@@ -12,15 +15,10 @@ const SearchBar = ({ listings, setSearchResults }) => {
 
     return (
         <form className="search" onSubmit={handleSubmit}>
-            <input
-                className="search__input"
-                type="text"
-                id="search"
-                onChange={handleSearchChange}
-            />
-            <button className="search__button">
-                Search
-            </button>
+            <InputGroup size="lg">
+                <Form.Control type="text" placeholder="Search..." onChange={handleSearchChange} />
+
+            </InputGroup>
         </form>
     )
 }
