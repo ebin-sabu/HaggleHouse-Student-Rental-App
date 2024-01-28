@@ -1,10 +1,10 @@
 import axios from "axios"
 
 export const api = axios.create({
-    baseURL: 'http://localhost:8000/api/residency'
+    baseURL: 'https://hagglehouse.fly.dev/api/'
 })
 
 export const getListings = async () => {
-    const response = await api.get('/allresd')
+    const response = await api.get('residency/allresd')
     return response.data
 }

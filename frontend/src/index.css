@@ -68,7 +68,6 @@ main {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 20px;
-  /* Adjust as needed */
 }
 
 .listing-details {
@@ -184,9 +183,16 @@ main {
   place-content: center;
 }
 
-@media (min-width: 576px) {
+@media (max-width: 576px) {
   .search {
     font-size: 10px;
+  }
+
+  main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    /* Adjust as needed */
   }
 
   .search__button {
@@ -195,7 +201,7 @@ main {
   }
 }
 
-@media (min-width: 800px) {
+@media (max-width: 800px) {
   .search {
     width: 97%;
     font-size: 15px;
@@ -205,6 +211,13 @@ main {
     padding-left: 1px;
     padding-right: 1px;
     font-size: 15px;
+  }
+
+  main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    /* Adjust as needed */
   }
 }
 
