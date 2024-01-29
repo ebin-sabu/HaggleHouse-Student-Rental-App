@@ -28,7 +28,7 @@ const NavbarCustom = () => {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav className="ms-auto">
+            <Nav className="me-auto">
               <Nav.Link href="/login">Login</Nav.Link>
             </Nav>
           </Nav>
