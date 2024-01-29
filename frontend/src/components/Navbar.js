@@ -29,7 +29,7 @@ const NavbarCustom = () => {
             navbarScroll
           >
             <Nav className="me-auto">
-              <Nav.Link href="/login">Login</Nav.Link>
+              <Link to="/login"><h2>Login</h2></Link>
             </Nav>
           </Nav>
         </Navbar.Collapse>
