@@ -1,26 +1,31 @@
+import Form from 'react-bootstrap/Form';
+import InputGroup from 'react-bootstrap/InputGroup';
 
-const SearchBar = ({ listings, setSearchResults }) => {
-    const handleSubmit = (e) => e.preventDefault()
+
+const SearchBar = ({ listings, setSearchResults, setLoading }) => {
+    const handleSubmit = (e) => e.preventDefault();
 
     const handleSearchChange = (e) => {
-        if (!e.target.value) return setSearchResults(listings)
+        setLoading(true); // Set loading to true when search starts
+
+        if (!e.target.value) {
+            setSearchResults(listings);
+            setLoading(false); // Set loading to false when no input
+            return;
+        }
 
         const resultsArray = listings.filter(listings => listings.title.toLowerCase().includes(e.target.value.toLowerCase()) || listings.address.toLowerCase().includes(e.target.value.toLowerCase()) || listings.description.toLowerCase().includes(e.target.value.toLowerCase()) || listings.city.toLowerCase().includes(e.target.value.toLowerCase()) || listings.country.toLowerCase().includes(e.target.value.toLowerCase()))
 
-        setSearchResults(resultsArray)
-    }
+        setSearchResults(resultsArray);
+        setLoading(false); // Set loading to false when search is done
+    };
 
     return (
         <form className="search" onSubmit={handleSubmit}>
-            <input
-                className="search__input"
-                type="text"
-                id="search"
-                onChange={handleSearchChange}
-            />
-            <button className="search__button">
-                Search
-            </button>
+            <InputGroup size="lg">
+                <Form.Control type="text" placeholder="Search..." onChange={handleSearchChange} />
+
+            </InputGroup>
         </form>
     )
 }

@@ -1,10 +1,17 @@
 import Button from 'react-bootstrap/Button';
-const Login = () => {
+const SignUp = () => {
 
     return (
-        <form className="login">
+        <form className="signUp">
             <img className="logoLogin" width="200px" height="auto" alt="logo" src="fav.png" />
-            <h3>Login</h3>
+            <h3>Sign Up</h3>
+
+            <label>Name</label>
+            <input
+                type="name"
+            /*onChange={(e) => setEmail(e.target.value)} */
+            /*value={email} */
+            />
 
             <label>Email</label>
             <input
@@ -26,4 +33,4 @@ const Login = () => {
     )
 }
 
-export default Login
+export default SignUp

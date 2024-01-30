@@ -8,7 +8,11 @@ function Popup(popuplisting) {
 
     return (
         <>
-            <button className="view-button" onClick={() => setShow(true)}>View</button>
+            <div className="position-absolute top-100 start-50 translate-middle">
+                <div className="d-grid gap-2">
+                    <Button variant="dark" size="sm" onClick={() => setShow(true)}>View</Button>{' '}
+                </div>
+            </div>
 
             <Modal
                 show={show}
@@ -24,19 +28,19 @@ function Popup(popuplisting) {
                 <Modal.Body>
                     <Carousel>
                         <Carousel.Item>
-                            <img className='popup-Image' alt="Listing-Image" src={popuplisting.image}></img>
+                            <img className='popup-Image' alt="Listing" src={popuplisting.image}></img>
                             <Carousel.Caption>
                                 <p>Image1: Living Room</p>
                             </Carousel.Caption>
                         </Carousel.Item>
                         <Carousel.Item>
-                            <img className='popup-Image' alt="Listing-Image" src={popuplisting.image}></img>
+                            <img className='popup-Image' alt="Listing" src={popuplisting.image}></img>
                             <Carousel.Caption>
                                 <p>Image2: Kitchen</p>
                             </Carousel.Caption>
                         </Carousel.Item>
                         <Carousel.Item>
-                            <img className='popup-Image' alt="Listing-Image" src={popuplisting.image}></img>
+                            <img className='popup-Image' alt="Listing" src={popuplisting.image}></img>
                             <Carousel.Caption>
                                 <p>Image3: Bedroom</p>
                             </Carousel.Caption>
