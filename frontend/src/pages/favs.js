@@ -1,27 +1,41 @@
-import React, { useState } from 'react';
-import Listing from "./Listing"; // Adjust the path as necessary
+import React, { useEffect, useState } from 'react';
+import Listing from "../components/Listing"; // Ensure this path is correct
 import Pagination from 'react-bootstrap/Pagination';
-import { PuffLoader } from "react-spinners"; // Assuming you're using react-spinners for loading indication
+import { PuffLoader } from "react-spinners";
+import { useFavorites } from '../context/FavoritesContext'; // Ensure this path is correct
 
-const ListPage = ({ searchResults, isLoading }) => {
+const Favs = () => {
+    const { favorites } = useFavorites();
     const [currentPage, setCurrentPage] = useState(1);
+    // Adjust isLoading to be initially true if you expect data to be loaded initially
+    const [isLoading, setIsLoading] = useState(true);
+
     const listingsPerPage = 12;
     const indexOfLastListing = currentPage * listingsPerPage;
     const indexOfFirstListing = indexOfLastListing - listingsPerPage;
-    const currentListings = searchResults.slice(indexOfFirstListing, indexOfLastListing);
+    const currentFavorites = favorites.slice(indexOfFirstListing, indexOfLastListing);
+    const totalPages = Math.ceil(favorites.length / listingsPerPage);
 
-    const totalPages = Math.ceil(searchResults.length / listingsPerPage);
+    useEffect(() => {
+        // Simulate a loading effect, or set a condition for actual loading state
+        if (favorites.length >= 0) {
+            setIsLoading(false); // Set loading to false once favorites are checked
+        }
+    }, [favorites]);
 
     return (
         <main style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             {isLoading ? (
-                // Loader centered horizontally and vertically
                 <div style={{ display: 'flex', justifyContent: 'center', width: '100%', margin: '15px' }}>
                     <PuffLoader color='#F6AE2D' />
                 </div>
+            ) : favorites.length === 0 ? (
+                <div style={{ marginTop: '20px' }}>
+                    <p style={{ fontSize: '20px', fontWeight: 'bold', color: '#1C2541' }}>No Properties Have Been Favorited.</p>
+                </div>
             ) : (
                 <main>
-                    {currentListings.map(listing => <Listing key={listing.id} listing={listing} />)}
+                    {currentFavorites.map(listing => <Listing key={listing.id} listing={listing} />)}
                 </main>
             )}
             {totalPages > 1 && (
@@ -41,4 +55,5 @@ const ListPage = ({ searchResults, isLoading }) => {
     );
 };
 
-export default ListPage;
+export default Favs;
+

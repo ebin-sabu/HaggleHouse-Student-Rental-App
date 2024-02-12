@@ -8,16 +8,19 @@ datasource db {
 }
 
 model User {
-    id               String      @id @default(auto()) @map("_id") @db.ObjectId
+    id               String     @id @default(auto()) @map("_id") @db.ObjectId
     name             String?
-    email            String      @unique
+    email            String     @unique
+    passwordHash     String
     image            String?
     bookedVisits     Json[]
-    favResidenciesID String[]    @db.ObjectId
-    ownedResidencies Residency[] @relation("Owner")
+    favResidenciesID String[]   @db.ObjectId
+    bidsMade         Bid[] // Relation to bids made by the user
+    landlord         Boolean
+    ownedResidencies Property[] @relation("Owner")
 }
 
-model Residency {
+model Property {
     id          String   @id @default(auto()) @map("_id") @db.ObjectId
     title       String
     description String
@@ -29,8 +32,20 @@ model Residency {
     facilities  Json
     userEmail   String
     owner       User     @relation("Owner", fields: [userEmail], references: [email])
+    bids        Bid[] // Relation to bids on the property
     createdAt   DateTime @default(now())
     updatedAt   DateTime @updatedAt
 
     @@unique(fields: [address, userEmail])
+}
+
+model Bid {
+    id         String   @id @default(auto()) @map("_id") @db.ObjectId
+    amount     Int // The bid amount
+    property   Property @relation(fields: [propertyId], references: [id])
+    propertyId String   @db.ObjectId // Ensure this matches Property.id's type
+    user       User     @relation(fields: [userId], references: [id])
+    userId     String   @db.ObjectId // Ensure this matches User.id's type
+    createdAt  DateTime @default(now())
+    updatedAt  DateTime @updatedAt
 }

@@ -69,6 +69,22 @@ header h2 {
   color: white;
 }
 
+.custom-offcanvas-dark .offcanvas-header,
+.custom-offcanvas-dark .offcanvas-body {
+  background-color: #343a40;
+  /* Bootstrap dark theme color */
+  color: white;
+  /* Text color */
+}
+
+.custom-nav-link {
+  font-size: 4rem;
+  margin: 15px;
+  /* Larger text size */
+  color: white !important;
+  /* Ensuring the text is white, !important to override default styles */
+}
+
 
 
 /* homepage */
@@ -79,7 +95,7 @@ header h2 {
 
 main {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
 }
 
@@ -157,6 +173,37 @@ main {
   text-align: center;
 }
 
+.loaderCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  /* Ensures full width */
+}
+
+.pagination .page-item.active .page-link {
+  background-color: #1C2541;
+  /* Change to your preferred color */
+  border-color: #1C2541;
+  /* Change to your preferred color */
+}
+
+.pagination .page-link {
+  color: #1C2541;
+  /* Change text color */
+}
+
+.pagination .page-link:hover {
+  color: #F6AE2D;
+  /* Change text color on hover */
+  background-color: #e9ecef;
+  /* Change background color on hover */
+  border-color: #dee2e6;
+  /* Change border color on hover */
+}
+
+
 /* Search Bar*/
 .search {
   position: relative;
@@ -198,7 +245,7 @@ main {
 }
 
 /* Smart-Phone */
-@media (max-width: 576px) {
+@media (max-width: 635px) {
   main {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
@@ -226,9 +273,40 @@ main {
   }
 }
 
+/* Smart-Phone */
+@media (max-width: 980px) {
+  @media (min-width: 635px) {
+    main {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .listing-details {
+      background: #fffefedc;
+      border-radius: 4px;
+      margin: 20px auto;
+      padding: 20px;
+      position: relative;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
+      width: 350px;
+      height: 420px;
+      border-radius: 20px;
+    }
+
+    .listing-details h5 {
+      bottom: 200px;
+    }
+
+    .listing-details p {
+      text-align: center;
+    }
+  }
+}
+
 /* Ipads*/
-@media (max-width: 1200px) {
-  @media (min-width: 577px) {
+@media (max-width: 1350px) {
+  @media (min-width: 980px) {
     main {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
