@@ -7,15 +7,15 @@ Deployed live on : [hagglehouse.ebinsabu.com](http://hagglehouse.ebinsabu.com)
 ### Desktop View
 
 <p align="center">
-  <img width="700" src="https://github.com/ebin-sabu/HaggleHouse/assets/49438210/ad8bb081-73eb-48ad-a470-be978b1621e5" alt="Desktop View Screenshot 1">
-  <img width="700" src="https://github.com/ebin-sabu/HaggleHouse/assets/49438210/1c00100f-48cb-4dd5-b9bb-0d52b0148810" alt="Desktop View Screenshot 2">
+  <img src="https://github.com/ebin-sabu/HaggleHouse/assets/49438210/ad8bb081-73eb-48ad-a470-be978b1621e5" alt="Desktop View Screenshot 1" width="700" style="margin-right: 10px; border-radius: 8px;">
+  <img src="https://github.com/ebin-sabu/HaggleHouse/assets/49438210/1c00100f-48cb-4dd5-b9bb-0d52b0148810" alt="Desktop View Screenshot 2" width="700" style="margin-left: 10px; border-radius: 8px;">
 </p>
 
 ### Mobile View
 
 <p align="center">
-  <img width="300" src="https://github.com/ebin-sabu/HaggleHouse/assets/49438210/495e37f0-6fb9-474f-b90a-f9bc2c067200" alt="Mobile View Screenshot 1">
-  <img width="300" src="https://github.com/ebin-sabu/HaggleHouse/assets/49438210/fb931185-89d2-4cf9-a7fe-9e0813521596" alt="Mobile View Screenshot 2">
+  <img src="https://github.com/ebin-sabu/HaggleHouse/assets/49438210/495e37f0-6fb9-474f-b90a-f9bc2c067200" alt="Mobile View Screenshot 1" width="300" style="margin-right: 10px; border-radius: 8px;">
+  <img src="https://github.com/ebin-sabu/HaggleHouse/assets/49438210/fb931185-89d2-4cf9-a7fe-9e0813521596" alt="Mobile View Screenshot 2" width="300" style="margin-left: 10px; border-radius: 8px;">
 </p>
 
 ## Key Features
