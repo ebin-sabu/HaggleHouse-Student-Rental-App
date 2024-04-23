@@ -6,18 +6,18 @@ const SearchBar = ({ listings, setSearchResults, setLoading }) => {
     const handleSubmit = (e) => e.preventDefault();
 
     const handleSearchChange = (e) => {
-        setLoading(true); // Set loading to true when search starts
+        setLoading(true);
 
         if (!e.target.value) {
             setSearchResults(listings);
-            setLoading(false); // Set loading to false when no input
+            setLoading(false);
             return;
         }
 
         const resultsArray = listings.filter(listings => listings.title.toLowerCase().includes(e.target.value.toLowerCase()) || listings.address.toLowerCase().includes(e.target.value.toLowerCase()) || listings.description.toLowerCase().includes(e.target.value.toLowerCase()) || listings.city.toLowerCase().includes(e.target.value.toLowerCase()) || listings.country.toLowerCase().includes(e.target.value.toLowerCase()))
 
         setSearchResults(resultsArray);
-        setLoading(false); // Set loading to false when search is done
+        setLoading(false);
     };
 
     return (

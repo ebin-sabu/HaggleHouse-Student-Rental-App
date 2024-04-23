@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import Listing from "./Listing"; // Adjust the path as necessary
+import Listing from "./Listing";
 import Pagination from 'react-bootstrap/Pagination';
-import { PuffLoader } from "react-spinners"; // Assuming you're using react-spinners for loading indication
+import { PuffLoader } from "react-spinners";
 
 const ListPage = ({ searchResults, isLoading }) => {
     const [currentPage, setCurrentPage] = useState(1);
-    const listingsPerPage = 12;
+    const listingsPerPage = 4;
     const indexOfLastListing = currentPage * listingsPerPage;
     const indexOfFirstListing = indexOfLastListing - listingsPerPage;
     const currentListings = searchResults.slice(indexOfFirstListing, indexOfLastListing);
@@ -15,7 +15,6 @@ const ListPage = ({ searchResults, isLoading }) => {
     return (
         <main style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             {isLoading ? (
-                // Loader centered horizontally and vertically
                 <div style={{ display: 'flex', justifyContent: 'center', width: '100%', margin: '15px' }}>
                     <PuffLoader color='#F6AE2D' />
                 </div>

@@ -19,6 +19,7 @@ body {
   font-family: "Poppins";
 }
 
+/* Navigation */
 header {
   background: #1C2541;
 }
@@ -72,25 +73,25 @@ header h2 {
 .custom-offcanvas-dark .offcanvas-header,
 .custom-offcanvas-dark .offcanvas-body {
   background-color: #343a40;
-  /* Bootstrap dark theme color */
   color: white;
-  /* Text color */
 }
 
 .custom-nav-link {
   font-size: 4rem;
   margin: 15px;
-  /* Larger text size */
   color: white !important;
-  /* Ensuring the text is white, !important to override default styles */
 }
 
 
 
 /* homepage */
 .home {
-  gap: 10px;
   place-items: center;
+  margin: auto;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 main {
@@ -179,28 +180,22 @@ main {
   align-items: center;
   height: 100vh;
   width: 100%;
-  /* Ensures full width */
 }
 
+/* Pagination */
 .pagination .page-item.active .page-link {
   background-color: #1C2541;
-  /* Change to your preferred color */
   border-color: #1C2541;
-  /* Change to your preferred color */
 }
 
 .pagination .page-link {
   color: #1C2541;
-  /* Change text color */
 }
 
 .pagination .page-link:hover {
   color: #F6AE2D;
-  /* Change text color on hover */
   background-color: #e9ecef;
-  /* Change background color on hover */
   border-color: #dee2e6;
-  /* Change border color on hover */
 }
 
 
@@ -215,6 +210,7 @@ main {
   font-size: 20px;
   display: flex;
   flex-flow: row nowrap;
+  margin-top: 10px;
 }
 
 .search:focus-within {
@@ -326,7 +322,7 @@ main {
   border-radius: 5px;
 }
 
-
+/* Forms */
 form.signup,
 form.login {
   max-width: 400px;
@@ -370,4 +366,71 @@ form button {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+.image-fit-cover {
+  object-fit: cover;
+  width: 150px;
+  height: 150px;
+  border: 3px solid #ffc107;
+  border-radius: 50%;
+}
+
+.image-fit-cover2 {
+  object-fit: cover;
+  width: 30px;
+  height: 30px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+}
+
+.modal-dialog.bottom-modal {
+  margin-top: 0;
+  margin-bottom: auto;
+  justify-content: center;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.flex-grow-1 {
+  flex-grow: 1;
+}
+
+.custom-container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+  margin-top: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.button-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* Take the full height of the viewport */
+}
+
+.custom-input,
+.custom-datepicker {
+  height: 57px;
+  /* Adjust the height to match */
+  font-size: 1rem;
+  /* Ensure the font size is the same */
 }

@@ -12,40 +12,73 @@ model User {
     name             String?
     email            String     @unique
     passwordHash     String
-    image            String?
+    profilePicUrl    String     @default("https://static.vecteezy.com/system/resources/previews/020/765/399/non_2x/default-profile-account-unknown-icon-black-silhouette-free-vector.jpg")
     bookedVisits     Json[]
     favResidenciesID String[]   @db.ObjectId
-    bidsMade         Bid[] // Relation to bids made by the user
+    bidsMade         Bid[]
     landlord         Boolean
     ownedResidencies Property[] @relation("Owner")
+    groupId          String?    @map("groupId") @db.ObjectId
+    group            Group?     @relation(fields: [groupId], references: [id])
 }
 
 model Property {
-    id          String   @id @default(auto()) @map("_id") @db.ObjectId
-    title       String
-    description String
-    price       Int
-    address     String
-    city        String
-    country     String
-    image       String
-    facilities  Json
-    userEmail   String
-    owner       User     @relation("Owner", fields: [userEmail], references: [email])
-    bids        Bid[] // Relation to bids on the property
-    createdAt   DateTime @default(now())
-    updatedAt   DateTime @updatedAt
+    id             String   @id @default(auto()) @map("_id") @db.ObjectId
+    title          String
+    description    String
+    price          Int
+    address        String
+    city           String
+    country        String
+    images         Image[] // Relation to Image Model
+    facilities     Json
+    userId         String   @db.ObjectId // Link to the User model by ID
+    owner          User     @relation("Owner", fields: [userId], references: [id])
+    bids           Bid[] // Relation to Bid Model
+    createdAt      DateTime @default(now())
+    updatedAt      DateTime @updatedAt
+    deadline       DateTime
+    live           Boolean  @default(true) // If Property is on the market or not.
+    availableRooms Int // Number of available rooms
 
-    @@unique(fields: [address, userEmail])
+    @@unique(fields: [address, userId])
+}
+
+model Image {
+    id          String   @id @default(auto()) @map("_id") @db.ObjectId
+    url         String
+    description String
+    propertyId  String   @db.ObjectId
+    property    Property @relation(fields: [propertyId], references: [id])
+
+    @@index([propertyId], name: "idx_image_propertyId")
+}
+
+enum BidStatus {
+    PENDING
+    ACCEPTED
+    REJECTED
 }
 
 model Bid {
-    id         String   @id @default(auto()) @map("_id") @db.ObjectId
-    amount     Int // The bid amount
-    property   Property @relation(fields: [propertyId], references: [id])
-    propertyId String   @db.ObjectId // Ensure this matches Property.id's type
-    user       User     @relation(fields: [userId], references: [id])
-    userId     String   @db.ObjectId // Ensure this matches User.id's type
-    createdAt  DateTime @default(now())
-    updatedAt  DateTime @updatedAt
+    id         String    @id @default(auto()) @map("_id") @db.ObjectId
+    amount     Int
+    property   Property  @relation(fields: [propertyId], references: [id])
+    propertyId String    @db.ObjectId
+    user       User      @relation(fields: [userId], references: [id])
+    userId     String    @db.ObjectId
+    status     BidStatus @default(PENDING)
+    createdAt  DateTime  @default(now())
+    updatedAt  DateTime  @updatedAt
+    // New fields for capturing group details indirectly through the User
+    groupId    String?   @db.ObjectId
+    group      Group?    @relation(fields: [groupId], references: [id])
+}
+
+model Group {
+    id             String @id @default(auto()) @map("_id") @db.ObjectId
+    joinCode       String @unique
+    numberOfPeople Int
+    users          User[]
+    bids           Bid[]
 }

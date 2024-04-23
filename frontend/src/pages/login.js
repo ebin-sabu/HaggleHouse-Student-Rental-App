@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
-import { loginUser } from '../api/axios'; // Make sure this path matches your project structure
-import { useNavigate } from 'react-router-dom';
+import { loginUser } from '../api/axios';
+import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { toast } from 'react-toastify';
 
@@ -30,7 +30,7 @@ const Login = () => {
     };
 
     return (
-        <form className="login" onSubmit={handleSubmit}>
+        <form className="login" style={{ fontFamily: "Poppins", fontWeight: 500 }} onSubmit={handleSubmit}>
             <img className="logoLogin" width="170px" height="auto" alt="logo" src="fav.png" />
             <h3>Login</h3>
 
@@ -48,8 +48,9 @@ const Login = () => {
                 onChange={(e) => setPassword(e.target.value)}
             />
             <div className="d-grid gap-2">
-                <Button type="submit" variant="warning">Login</Button>
+                <Button type="submit" variant="warning" style={{ fontFamily: "Poppins", fontWeight: 600 }}>Login</Button>
             </div>
+            <p><br />New to HaggleHouse: <Link to="/sign-up">Sign up Now</Link></p>
         </form>
     );
 };
