@@ -7,8 +7,8 @@ Deployed live on : [hagglehouse.ebinsabu.com](http://hagglehouse.ebinsabu.com)
 ### Desktop View
 
 <p align="center">
-  <img src="https://github.com/ebin-sabu/HaggleHouse/assets/49438210/ad8bb081-73eb-48ad-a470-be978b1621e5" alt="Desktop View Screenshot 1" width="700" style="margin-right: 10px; border-radius: 8px;">
-  <img src="https://github.com/ebin-sabu/HaggleHouse/assets/49438210/1c00100f-48cb-4dd5-b9bb-0d52b0148810" alt="Desktop View Screenshot 2" width="700" style="margin-left: 10px; border-radius: 8px;">
+  <img src="https://github.com/ebin-sabu/HaggleHouse/assets/49438210/ad8bb081-73eb-48ad-a470-be978b1621e5" alt="Desktop View Screenshot 1" width="700" style="margin-bottom: 10px; border-radius: 20px;">
+  <img src="https://github.com/ebin-sabu/HaggleHouse/assets/49438210/1c00100f-48cb-4dd5-b9bb-0d52b0148810" alt="Desktop View Screenshot 2" width="700" style="margin-left: 10px; border-radius: 20px;">
 </p>
 
 ### Mobile View
