@@ -16,7 +16,7 @@ HaggleHouse is a web application designed to simplify finding, managing, and neg
 - Students can search for properties based on location, price range, property type, and other relevant filters
 
 ### Real-Time Messaging
-- Students and landlords can communicate in real-time, facilitating questions, negotiations, and property inquiries
+- Students and landlords can communicate in real time, facilitating questions, negotiations, and property inquiries
 - Notifications for new messages and property updates are available
 
 ### Price Negotiation
@@ -57,3 +57,30 @@ The API plays a crucial role in managing data flow and ensuring security within 
 While many apps are designed to help students find accommodation, none enable them to negotiate with landlords effectively. HaggleHouse aims to bridge this gap by providing a platform where students can easily search for properties, submit offers, and communicate with landlords in real-time.
 
 With its user-friendly interfaces and location-based search capabilities, HaggleHouse simplifies the process of finding and securing student rental properties, addressing the challenges faced by a significant portion of the student population.
+
+## Setup
+
+To run the HaggleHouse application, follow these steps:
+
+1. Open a terminal and navigate to the `server` directory:
+   ```
+   cd server
+   ```
+   Then, install the dependencies and start the server:
+   ```
+   npm install
+   npm run dev
+   ```
+
+2. Open another terminal and navigate to the `frontend` directory:
+   ```
+   cd frontend
+   ```
+   Then, install the dependencies and start the client:
+   ```
+   npm install
+   npm start
+   ```
+
+The HaggleHouse application should now be running locally on [http://localhost:3000](http://localhost:3000), and you can access it through your web browser.
+
