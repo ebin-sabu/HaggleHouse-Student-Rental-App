@@ -4,6 +4,19 @@ HaggleHouse is a web application designed to simplify finding, managing, and neg
 
 Deployed live on : [hagglehouse.ebinsabu.com](http://hagglehouse.ebinsabu.com)
 
+### Desktop View
+
+<img width="1440" alt="Screenshot 2024-04-23 at 15 10 03" src="https://github.com/ebin-sabu/HaggleHouse/assets/49438210/ad8bb081-73eb-48ad-a470-be978b1621e5">
+
+<img width="1440" alt="Screenshot 2024-04-23 at 15 09 41" src="https://github.com/ebin-sabu/HaggleHouse/assets/49438210/1c00100f-48cb-4dd5-b9bb-0d52b0148810">
+
+### Mobile View
+
+<img width="300" alt="IMG_8942" src="https://github.com/ebin-sabu/HaggleHouse/assets/49438210/495e37f0-6fb9-474f-b90a-f9bc2c067200">
+
+<img width="300" alt="IMG_8941" src="https://github.com/ebin-sabu/HaggleHouse/assets/49438210/fb931185-89d2-4cf9-a7fe-9e0813521596">
+
+
 ## Key Features
 
 #### User Registration and Authentication
@@ -83,4 +96,9 @@ To run the HaggleHouse application, follow these steps:
    ```
 
 The HaggleHouse application should now be running locally on [http://localhost:3000](http://localhost:3000), and you can access it through your web browser.
+
+
+
+
+
 
