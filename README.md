@@ -4,42 +4,40 @@ HaggleHouse is a web application designed to simplify finding, managing, and neg
 
 ## Key Features
 
-### User Registration and Authentication
+#### User Registration and Authentication
 - Users can create accounts and log in securely
 - User roles are defined, distinguishing between students and landlords
 
-### Property Listing
+#### Property Listing
 - Landlords can list rental properties with details like location, price, availability, and property features
 - Students can search and view property listings without registration
 
-### Search and Filter Functionality
+#### Search and Filter Functionality
 - Students can search for properties based on location, price range, property type, and other relevant filters
 
-### Real-Time Messaging
+#### Real-Time Messaging
 - Students and landlords can communicate in real time, facilitating questions, negotiations, and property inquiries
 - Notifications for new messages and property updates are available
 
-### Price Negotiation
+#### Price Negotiation
 - Students can submit offers on rental properties
 - Landlords can respond with counteroffers
 - Negotiation history is maintained
 
-### Responsive Design
+#### Responsive Design
 - The web application is responsive, ensuring a seamless user experience on various devices and screen sizes
 
-### Custom Backend API
+#### Custom Backend API
 - A custom backend API is developed for handling data storage, retrieval, and user authentication
 - The API supports real-time messaging and price negotiation functionality
 
-## Desirable Features
-
-### User Profiles
+#### User Profiles
 - Users can create and manage profiles with preferences and contact details
 
-### Intuitive Search
+#### Intuitive Search
 - A prominent search bar allows users to quickly enter their preferences, with auto-suggestions for effortless search
 
-### Property Cards
+#### Property Cards
 - Property listings are displayed as clean, concise cards, featuring high-quality images, pricing information, and essential details
 
 ## Technology Stack
