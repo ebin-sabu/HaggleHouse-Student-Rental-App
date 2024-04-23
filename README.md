@@ -2,6 +2,8 @@
 
 HaggleHouse is a web application designed to simplify finding, managing, and negotiating student rental properties. Developed as part of a final year project at the University of Liverpool for a BSc in Computer Science, this application aims to address a critical gap in the market where 63% of students find it hard or very hard to find affordable accommodation (2023).
 
+Deployed live on : [hagglehouse.ebinsabu.com](http://hagglehouse.ebinsabu.com)
+
 ## Key Features
 
 #### User Registration and Authentication
